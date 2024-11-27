@@ -1,0 +1,11 @@
+starlette~=0.37.2
+fastapi~=0.111.0
+uvicorn~=0.29.0
+python-dotenv~=1.0.1
+PyJWT~=2.8.0
+pyodbc~=5.1.0
+pycryptodome~=3.20.0
+reportlab~=4.2.2
+pandas~=2.2.2
+fpdf~=1.7.2
+PyPDF2~=3.0.0
