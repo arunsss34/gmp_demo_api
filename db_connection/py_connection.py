@@ -6,7 +6,7 @@ def get_mssql_connection():
         HOST = 'innalytics.database.windows.net'
         USER = 'AppUser2'
         PASSWORD = 'Iec@420#1234'
-        DB = 'gmpweaving'
+        DB = 'CNCERPDB'
         conn = pyodbc.connect(
             'DRIVER={' + DRIVER + '};SERVER=' + HOST + ';DATABASE=' + DB + ';UID=' + USER + ';PWD=' + PASSWORD)
         return conn
