@@ -56,6 +56,15 @@ async def main_menu(decoded=Depends(auth_scheme)):
         raise HTTPException(status_code=401, detail="Invalid token or expired token.")
 
 
+@app.get("/gmp/get_gmpapiipconfig")
+async def get_gmpapiipconfig():
+        try:
+            response = py_filter.fn_get_gmpapiipconfig()
+            return response
+        except Exception as e:
+            print(str(e))
+
+
 @app.get("/bis/get_user_list")
 # V1 -- getting user list
 async def get_user_list(decoded=Depends(auth_scheme)):
