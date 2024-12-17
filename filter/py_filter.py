@@ -116,7 +116,22 @@ def last_updated_date_for_customer_po_lw(decoded):
     except Exception as e:
         print(str(e))
         return {"dates": []}
-
+def fn_get_gmpapiipconfig():
+    try:
+        qry = "SELECT * FROM gmpAPI_IPconfig where status=1"
+        res, k = py_connection.get_result_col(qry)
+        lst = []
+        if res and len(res) > 0:
+            for row in res:
+                view_data = dict(zip(k, row))
+                lst.append(view_data)
+            return {"ip_config": lst}
+        else:
+            return {"ip_config": lst}
+    except Exception as e:
+        print(str(e))
+        return {"ip_config": []}
+        
 def get_frame_last_updated_date_lw(decoded):
     try:
         qry = ("SELECT TOP 1 CAST(updateddate AS DATE) AS last_updated_date FROM rptspg.YarnFrameWiseStock WHERE "
